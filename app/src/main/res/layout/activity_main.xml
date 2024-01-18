@@ -1,0 +1,109 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#085747"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="1000dp"
+        android:layout_height="2500dp"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentBottom="false"
+        android:layout_centerHorizontal="false"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:text="bot" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="1000dp"
+        android:layout_height="250dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:soundEffectsEnabled="false"
+        android:text="top" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="1000dp"
+        android:layout_height="250dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="450dp"
+        android:layout_marginBottom="0dp"
+        android:soundEffectsEnabled="false"
+        android:text="bot" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="260dp"
+        android:text="Start Puzzle" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="360dp"
+        android:text="Options" />
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="319dp"
+        android:layout_marginEnd="23dp"
+        android:text="Reset Pieces" />
+
+    <Button
+        android:id="@+id/mainMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="319dp"
+        android:layout_marginEnd="275dp"
+        android:text="Main Menu" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="31dp"
+        android:src="@drawable/pic" />
+
+    <Button
+        android:id="@+id/slideShowButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="460dp"
+        android:text="Slide Show" />
+
+    <Button
+        android:id="@+id/importButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="560dp"
+        android:text="Import" />
+
+
+</RelativeLayout>

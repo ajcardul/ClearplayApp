@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/baseButton"
         android:layout_width="1000dp"
         android:layout_height="2500dp"
         android:layout_alignParentTop="false"
@@ -16,10 +16,10 @@
         android:layout_centerHorizontal="false"
         android:layout_marginTop="0dp"
         android:layout_marginBottom="0dp"
-        android:text="bot" />
+        android:text="" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/topButton"
         android:layout_width="1000dp"
         android:layout_height="250dp"
         android:layout_alignParentTop="true"
@@ -29,7 +29,7 @@
         android:text="top" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/botButton"
         android:layout_width="1000dp"
         android:layout_height="250dp"
         android:layout_alignParentTop="true"
@@ -41,7 +41,7 @@
         android:text="bot" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/startButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -50,7 +50,7 @@
         android:text="Start Puzzle" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/optionsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"

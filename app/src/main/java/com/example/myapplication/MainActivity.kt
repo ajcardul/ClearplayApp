@@ -3,17 +3,20 @@ package com.example.myapplication
 import android.graphics.Color
 import android.media.MediaPlayer
 import android.os.Bundle
-import android.view.MotionEvent
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import androidx.activity.ComponentActivity
+import java.util.Stack
 
 class MainActivity : ComponentActivity() {
     private var squareView: View? = null
-    val PieceTracker: BooleanArray = BooleanArray(2)
+    val PieceTracker: BooleanArray = BooleanArray(12)
+    var stack: Stack<Int> = Stack()
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -29,7 +32,16 @@ class MainActivity : ComponentActivity() {
         val imageView = findViewById<ImageView>(R.id.imageView)
         var mediaPlayer1 = MediaPlayer.create(this , R.raw.pieceone)
         var mediaPlayer2 = MediaPlayer.create(this , R.raw.piecetwo)
-
+        window.decorView.apply{
+            systemUiVisibility = (View.SYSTEM_UI_FLAG_IMMERSIVE
+                    or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    or View.SYSTEM_UI_FLAG_FULLSCREEN
+                    or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                    )
+        }
         //initial setting
         topButton.visibility = View.INVISIBLE
         topButton.setBackgroundColor(Color.TRANSPARENT)
@@ -45,7 +57,6 @@ class MainActivity : ComponentActivity() {
 
 
         startButton.setOnClickListener {
-            print("START")
             startButton.visibility = View.INVISIBLE
             baseButton.visibility = View.INVISIBLE
             optionsButton.visibility = View.INVISIBLE
@@ -76,36 +87,58 @@ class MainActivity : ComponentActivity() {
 
         }
         topButton.setOnClickListener {
-            //mediaPlayer1.start()
-            topButton.setBackgroundColor(Color.GREEN)
-            PieceTracker[0] = true
+            //topButton.setBackgroundColor(Color.GREEN)
+            placePiece(0)
             if (checkCompletion()) {
-                print("hi")
                 mediaPlayer1.start()
             }
         }
         botButton.setOnClickListener {
-            //mediaPlayer2.start()
-            botButton.setBackgroundColor(Color.YELLOW)
-            PieceTracker[1] = true
+            //botButton.setBackgroundColor(Color.YELLOW)
+            placePiece(1)
             if (checkCompletion()) {
                 mediaPlayer2.start()
             }
         }
         resetButton.setOnClickListener {
+            if(!stack.isEmpty()){
+                var poppedPiece = stack.pop()
+                removePiece(poppedPiece);
+            }
+            /* ORIGINAL RESET CODE
             topButton.setBackgroundColor(Color.TRANSPARENT)
             botButton.setBackgroundColor(Color.TRANSPARENT)
             for(i in 0 until 2) {
                 PieceTracker[i] = false
             }
+            */
         }
     }
     fun checkCompletion(): Boolean {
-        print("1")
         for(i in 0 until 2) {
             if (!PieceTracker[i]) {
                 return false
             }
+        }
+        return true
+    }
+    fun placePiece(x: Int): Boolean {
+        if(PieceTracker[x])
+            return true
+        PieceTracker[x] = true
+        when(x){
+            0 -> findViewById<Button>(R.id.topButton).setBackgroundColor(Color.GREEN)
+            1 -> findViewById<Button>(R.id.botButton).setBackgroundColor(Color.YELLOW)
+        }
+        stack.push(x)
+        return true
+    }
+    fun removePiece(x: Int): Boolean {
+        PieceTracker[x] = false
+
+        when(x){
+            0 -> findViewById<Button>(R.id.topButton).setBackgroundColor(Color.TRANSPARENT)
+            1 -> findViewById<Button>(R.id.botButton).setBackgroundColor(Color.TRANSPARENT)
         }
         return true
     }

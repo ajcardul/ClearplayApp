@@ -11,31 +11,36 @@
         android:id="@+id/baseButton"
         android:layout_width="1000dp"
         android:layout_height="2500dp"
-        android:layout_alignParentTop="false"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentBottom="false"
-        android:layout_centerHorizontal="false"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="-2dp"
         android:layout_marginBottom="0dp"
         android:text="" />
 
     <Button
         android:id="@+id/topButton"
         android:layout_width="1000dp"
-        android:layout_height="250dp"
+        android:layout_height="150dp"
+        android:layout_alignBottom="@+id/optionsButton"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="0dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="114dp"
+        android:layout_marginEnd="-2dp"
+        android:layout_marginBottom="-65dp"
         android:soundEffectsEnabled="false"
         android:text="top" />
 
     <Button
         android:id="@+id/botButton"
         android:layout_width="1000dp"
-        android:layout_height="250dp"
+        android:layout_height="50dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="258dp"
         android:layout_marginBottom="0dp"
         android:soundEffectsEnabled="false"
         android:text="bot" />
@@ -46,16 +51,18 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="260dp"
+        android:layout_marginTop="26dp"
         android:text="Start Puzzle" />
 
     <Button
         android:id="@+id/optionsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="360dp"
+        android:layout_marginStart="409dp"
+        android:layout_marginTop="119dp"
         android:text="Options" />
 
     <Button
@@ -64,8 +71,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="319dp"
-        android:layout_marginEnd="23dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="184dp"
         android:text="Reset Pieces" />
 
     <Button
@@ -74,26 +81,30 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="319dp"
-        android:layout_marginEnd="275dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="799dp"
         android:text="Main Menu" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="142dp"
+        android:layout_height="57dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="31dp"
+        android:layout_marginStart="757dp"
+        android:layout_marginTop="8dp"
         android:src="@drawable/pic" />
 
     <Button
         android:id="@+id/slideShowButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="460dp"
+        android:layout_marginStart="407dp"
+        android:layout_marginTop="240dp"
         android:text="Slide Show" />
 
     <Button
@@ -102,8 +113,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="560dp"
+        android:layout_marginTop="300dp"
         android:text="Import" />
 
 
+
 </RelativeLayout>
+

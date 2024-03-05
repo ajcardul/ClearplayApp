@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import androidx.activity.ComponentActivity
 import java.util.Stack
+import android.content.res.AssetFileDescriptor
 import java.io.File
 import android.net.Uri
 import android.graphics.drawable.Drawable
@@ -18,9 +19,9 @@ class MainActivity : ComponentActivity() {
     val PieceTracker: BooleanArray = BooleanArray(12)
     var stack: Stack<Int> = Stack()
     var SPData:  IntArray = IntArray(12)
-    //var SPData: IntArray = intArrayOf(0, 1, 1, 2, 0, 1, 1, 2, 0, 0, 2, 2)
-    val mediaPlayer1: MediaPlayer by lazy {MediaPlayer.create(this , R.raw.pieceone)}
-    val mediaPlayer2: MediaPlayer by lazy {MediaPlayer.create(this , R.raw.piecetwo)}
+
+    private var mediaPlayer: MediaPlayer? = null
+    private var isAudioFile1: Boolean = true
 
     var pNum: Int = 0
     var numPieces: Int = 0
@@ -56,8 +57,7 @@ class MainActivity : ComponentActivity() {
         val puzzleBase = findViewById<ImageView>(R.id.puzzleBase)
         val cover1 = findViewById<ImageView>(R.id.cover_12_1)
         val cover2 = findViewById<ImageView>(R.id.cover_12_2)
-        //var mediaPlayer1 = MediaPlayer.create(this , R.raw.pieceone)
-        //var mediaPlayer2 = MediaPlayer.create(this , R.raw.piecetwo)
+
         window.decorView.apply{
             systemUiVisibility = (View.SYSTEM_UI_FLAG_IMMERSIVE
                     or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
@@ -272,11 +272,8 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-        if (SPNum == 1) {
-            mediaPlayer1.start()
-        }
-        if (SPNum == 2) {
-            mediaPlayer2.start()
+        if (SPNum != 0) {
+            mediaPlayer?.start()
         }
         return true
     }
@@ -346,21 +343,12 @@ class MainActivity : ComponentActivity() {
 
     fun readInfo() {
         // Specify the path to your text file
-        var filePath: String = ""
-        var imgPath: String = "piece_covers/TestBases/TestBase" + (pNum + 1).toString() + ".png"
+        var filePath: String = "p" + pNum.toString() + "/p" + pNum.toString() + "data.txt"
+        var imgPath: String = "p" + pNum.toString() + "/TestBase" + (pNum + 1).toString() + ".png"
         val imgStream = assets.open(imgPath)
         val imgDrawable = Drawable.createFromStream(imgStream, null)
 
         findViewById<ImageView>(R.id.puzzleBase).setImageDrawable(imgDrawable)
-
-        if (pNum == 0) {
-            filePath = "p0data.txt"
-            //puzzleBase.setImageURI(imgUri)
-        }
-        else {
-            filePath = "p1data.txt"
-            //puzzleBase.setImageURI(imgUri)
-        }
 
         val lines = applicationContext.assets.open(filePath).bufferedReader().use {
             it.readLines()
@@ -380,5 +368,31 @@ class MainActivity : ComponentActivity() {
         else {
             println("Invalid file format: Not enough lines in the file.")
         }
+    }
+
+    private fun initializeMediaPlayer(x: Int): Boolean {
+        // Release existing MediaPlayer if it exists
+        mediaPlayer?.release()
+
+        if (x > numSPs) return false
+        // Create a new MediaPlayer instance
+        mediaPlayer = MediaPlayer().apply {
+            try {
+                // Open the audio file based on the boolean variable
+                val assetFileName = "p$pNum/audio/a$x.mp3"
+                val assetFileDescriptor: AssetFileDescriptor = assets.openFd(assetFileName)
+                setDataSource(assetFileDescriptor.fileDescriptor, assetFileDescriptor.startOffset, assetFileDescriptor.length)
+                prepare()
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+        return true
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        // Release the MediaPlayer when the activity is destroyed
+        mediaPlayer?.release()
     }
 }

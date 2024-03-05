@@ -56,8 +56,10 @@ class MainActivity : ComponentActivity() {
         val puzzleBase = findViewById<ImageView>(R.id.puzzleBase)
         val cover1 = findViewById<ImageView>(R.id.cover_12_1)
         val cover2 = findViewById<ImageView>(R.id.cover_12_2)
+        val cover3 = findViewById<ImageView>(R.id.cover_12_1ph)
+        val cover4 = findViewById<ImageView>(R.id.cover_12_2ph)
 
-        window.decorView.apply{
+        window.decorView.apply {
             systemUiVisibility = (View.SYSTEM_UI_FLAG_IMMERSIVE
                     or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                     or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
@@ -81,7 +83,7 @@ class MainActivity : ComponentActivity() {
         button4.setBackgroundColor(Color.TRANSPARENT)
         button4.setTextColor(Color.TRANSPARENT)
         button5.visibility = View.INVISIBLE
-        button5.setBackgroundColor(Color.RED)
+        button5.setBackgroundColor(Color.TRANSPARENT)
         button5.setTextColor(Color.TRANSPARENT)
         button6.visibility = View.INVISIBLE
         button6.setBackgroundColor(Color.TRANSPARENT)
@@ -113,6 +115,8 @@ class MainActivity : ComponentActivity() {
         puzzleBase.visibility = View.INVISIBLE
         cover1.visibility = View.INVISIBLE
         cover2.visibility = View.INVISIBLE
+        cover3.visibility = View.INVISIBLE
+        cover4.visibility = View.INVISIBLE
 
         startButton.setOnClickListener {
             startButton.visibility = View.INVISIBLE
@@ -140,6 +144,8 @@ class MainActivity : ComponentActivity() {
             puzzleBase.visibility = View.VISIBLE
             cover1.visibility = View.VISIBLE
             cover2.visibility = View.VISIBLE
+            cover3.visibility = View.VISIBLE
+            cover4.visibility = View.VISIBLE
 
             findViewById<RelativeLayout>(R.id.container).setBackgroundColor(0xFFFFFFFF.toInt())
 
@@ -169,6 +175,9 @@ class MainActivity : ComponentActivity() {
             puzzleBase.visibility = View.INVISIBLE
             cover1.visibility = View.INVISIBLE
             cover2.visibility = View.INVISIBLE
+            cover3.visibility = View.INVISIBLE
+            cover4.visibility = View.INVISIBLE
+
             findViewById<RelativeLayout>(R.id.container).setBackgroundColor(0xFF085747.toInt())
 
         }
@@ -231,10 +240,12 @@ class MainActivity : ComponentActivity() {
             SPChecker(11)
         }
         resetButton.setOnClickListener {
-            if(!stack.isEmpty()){
+            if (!stack.isEmpty()) {
                 var poppedPiece = stack.pop()
                 removePiece(poppedPiece);
             }
+
+
             /* ORIGINAL RESET CODE
             topButton.setBackgroundColor(Color.TRANSPARENT)
             botButton.setBackgroundColor(Color.TRANSPARENT)
@@ -246,6 +257,9 @@ class MainActivity : ComponentActivity() {
         importButton.setOnClickListener {
             readInfo()
             pNum = (pNum + 1) % 2
+        }
+        temp.setOnClickListener {
+            mediaPlayer?.run { stop() }
         }
     }
     fun checkCompletion(): Boolean {
@@ -288,12 +302,12 @@ class MainActivity : ComponentActivity() {
         }
         when (x) {
             0 -> {
-                findViewById<Button>(R.id.button1).setBackgroundColor(color)
-                //findViewById<ImageView>(R.id.cover_12_1).visibility = View.INVISIBLE
+                //findViewById<Button>(R.id.button1).setBackgroundColor(color)
+                findViewById<ImageView>(R.id.cover_12_1).visibility = View.INVISIBLE
             }
             1 -> {
-                findViewById<Button>(R.id.button2).setBackgroundColor(color)
-                //findViewById<ImageView>(R.id.cover_12_2).visibility = View.INVISIBLE
+                //findViewById<Button>(R.id.button2).setBackgroundColor(color)
+                findViewById<ImageView>(R.id.cover_12_2).visibility = View.INVISIBLE
             }
             2 -> findViewById<Button>(R.id.button3).setBackgroundColor(color)
             3 -> findViewById<Button>(R.id.button4).setBackgroundColor(color)
@@ -315,11 +329,11 @@ class MainActivity : ComponentActivity() {
         when (x) {
             0 -> {
                 findViewById<Button>(R.id.button1).setBackgroundColor(Color.TRANSPARENT)
-                //findViewById<ImageView>(R.id.cover_12_1).visibility = View.VISIBLE
+                findViewById<ImageView>(R.id.cover_12_1).visibility = View.VISIBLE
             }
             1 -> {
                 findViewById<Button>(R.id.button2).setBackgroundColor(Color.TRANSPARENT)
-                //findViewById<ImageView>(R.id.cover_12_2).visibility = View.VISIBLE
+                findViewById<ImageView>(R.id.cover_12_2).visibility = View.VISIBLE
             }
             2 -> findViewById<Button>(R.id.button3).setBackgroundColor(Color.TRANSPARENT)
             3 -> findViewById<Button>(R.id.button4).setBackgroundColor(Color.TRANSPARENT)

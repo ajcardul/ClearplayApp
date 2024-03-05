@@ -46,7 +46,6 @@ class MainActivity : ComponentActivity() {
         val button10 = findViewById<Button>(R.id.button10)
         val button11 = findViewById<Button>(R.id.button11)
         val button12 = findViewById<Button>(R.id.button12)
-        val baseButton = findViewById<Button>(R.id.baseButton)
         val resetButton = findViewById<Button>(R.id.reset)
         val temp = findViewById<Button>(R.id.temp)
         val temp2 = findViewById<Button>(R.id.temp2)
@@ -110,9 +109,6 @@ class MainActivity : ComponentActivity() {
         temp.visibility = View.INVISIBLE
         temp2.visibility = View.INVISIBLE
 
-        baseButton.visibility = View.VISIBLE
-        baseButton.setBackgroundColor(Color.TRANSPARENT)
-        baseButton.setTextColor(Color.TRANSPARENT)
 
         puzzleBase.visibility = View.INVISIBLE
         cover1.visibility = View.INVISIBLE
@@ -120,7 +116,6 @@ class MainActivity : ComponentActivity() {
 
         startButton.setOnClickListener {
             startButton.visibility = View.INVISIBLE
-            baseButton.visibility = View.INVISIBLE
             optionsButton.visibility = View.INVISIBLE
             slideShowButton.visibility = View.INVISIBLE
             importButton.visibility = View.INVISIBLE
@@ -151,7 +146,6 @@ class MainActivity : ComponentActivity() {
         }
         mainMenuButton.setOnClickListener {
             startButton.visibility = View.VISIBLE
-            baseButton.visibility = View.VISIBLE
             optionsButton.visibility = View.VISIBLE
             slideShowButton.visibility = View.VISIBLE
             importButton.visibility = View.VISIBLE
@@ -273,6 +267,7 @@ class MainActivity : ComponentActivity() {
             }
         }
         if (SPNum != 0) {
+            initMP(SPNum)
             mediaPlayer?.start()
         }
         return true
@@ -293,23 +288,23 @@ class MainActivity : ComponentActivity() {
         }
         when (x) {
             0 -> {
-                findViewById<Button>(R.id.button1).setBackgroundColor(Color.TRANSPARENT)
-                findViewById<ImageView>(R.id.cover_12_1).visibility = View.INVISIBLE
+                findViewById<Button>(R.id.button1).setBackgroundColor(color)
+                //findViewById<ImageView>(R.id.cover_12_1).visibility = View.INVISIBLE
             }
             1 -> {
-                findViewById<Button>(R.id.button2).setBackgroundColor(Color.TRANSPARENT)
-                findViewById<ImageView>(R.id.cover_12_2).visibility = View.INVISIBLE
+                findViewById<Button>(R.id.button2).setBackgroundColor(color)
+                //findViewById<ImageView>(R.id.cover_12_2).visibility = View.INVISIBLE
             }
-            2 -> findViewById<Button>(R.id.button3).setBackgroundColor(Color.TRANSPARENT)
-            3 -> findViewById<Button>(R.id.button4).setBackgroundColor(Color.TRANSPARENT)
-            4 -> findViewById<Button>(R.id.button5).setBackgroundColor(Color.TRANSPARENT)
-            5 -> findViewById<Button>(R.id.button6).setBackgroundColor(Color.TRANSPARENT)
-            6 -> findViewById<Button>(R.id.button7).setBackgroundColor(Color.TRANSPARENT)
-            7 -> findViewById<Button>(R.id.button8).setBackgroundColor(Color.TRANSPARENT)
-            8 -> findViewById<Button>(R.id.button9).setBackgroundColor(Color.TRANSPARENT)
-            9 -> findViewById<Button>(R.id.button10).setBackgroundColor(Color.TRANSPARENT)
-            10 -> findViewById<Button>(R.id.button11).setBackgroundColor(Color.TRANSPARENT)
-            11 -> findViewById<Button>(R.id.button12).setBackgroundColor(Color.TRANSPARENT)
+            2 -> findViewById<Button>(R.id.button3).setBackgroundColor(color)
+            3 -> findViewById<Button>(R.id.button4).setBackgroundColor(color)
+            4 -> findViewById<Button>(R.id.button5).setBackgroundColor(color)
+            5 -> findViewById<Button>(R.id.button6).setBackgroundColor(color)
+            6 -> findViewById<Button>(R.id.button7).setBackgroundColor(color)
+            7 -> findViewById<Button>(R.id.button8).setBackgroundColor(color)
+            8 -> findViewById<Button>(R.id.button9).setBackgroundColor(color)
+            9 -> findViewById<Button>(R.id.button10).setBackgroundColor(color)
+            10 -> findViewById<Button>(R.id.button11).setBackgroundColor(color)
+            11 -> findViewById<Button>(R.id.button12).setBackgroundColor(color)
         }
         stack.push(x)
         return true
@@ -319,12 +314,12 @@ class MainActivity : ComponentActivity() {
 
         when (x) {
             0 -> {
-                //findViewById<Button>(R.id.button1).setBackgroundColor(Color.TRANSPARENT)
-                findViewById<ImageView>(R.id.cover_12_1).visibility = View.VISIBLE
+                findViewById<Button>(R.id.button1).setBackgroundColor(Color.TRANSPARENT)
+                //findViewById<ImageView>(R.id.cover_12_1).visibility = View.VISIBLE
             }
             1 -> {
-                //findViewById<Button>(R.id.button2).setBackgroundColor(Color.TRANSPARENT)
-                findViewById<ImageView>(R.id.cover_12_2).visibility = View.VISIBLE
+                findViewById<Button>(R.id.button2).setBackgroundColor(Color.TRANSPARENT)
+                //findViewById<ImageView>(R.id.cover_12_2).visibility = View.VISIBLE
             }
             2 -> findViewById<Button>(R.id.button3).setBackgroundColor(Color.TRANSPARENT)
             3 -> findViewById<Button>(R.id.button4).setBackgroundColor(Color.TRANSPARENT)
@@ -343,8 +338,8 @@ class MainActivity : ComponentActivity() {
 
     fun readInfo() {
         // Specify the path to your text file
-        var filePath: String = "p" + pNum.toString() + "/p" + pNum.toString() + "data.txt"
-        var imgPath: String = "p" + pNum.toString() + "/TestBase" + (pNum + 1).toString() + ".png"
+        var filePath: String = "p$pNum/data.txt"
+        var imgPath: String = "p$pNum/TestBase$pNum.png"
         val imgStream = assets.open(imgPath)
         val imgDrawable = Drawable.createFromStream(imgStream, null)
 
@@ -370,7 +365,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    private fun initializeMediaPlayer(x: Int): Boolean {
+    private fun initMP(x: Int): Boolean {
         // Release existing MediaPlayer if it exists
         mediaPlayer?.release()
 

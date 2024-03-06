@@ -7,6 +7,121 @@
     android:background="#085747"
     tools:context=".MainActivity">
 
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:stretchColumns="*"
+        android:weightSum="3.5" >
+
+        <TableRow
+            android:id="@+id/tableRow60"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight=".5"
+            android:weightSum="4">
+
+            <Button
+                android:id="@+id/mainMenu6"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:text="Main Menu"
+                android:layout_weight="1"
+                style="?android:attr/buttonBarButtonStyle" />
+
+            <Button
+                android:id="@+id/temp6"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="Stop Sound" />
+
+            <Button
+                android:id="@+id/temp62"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:text="hold2"
+                android:layout_weight="1"
+                style="?android:attr/buttonBarButtonStyle" />
+
+            <Button
+                android:id="@+id/reset6"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:text="Undo"
+                android:layout_weight="1"
+                style="?android:attr/buttonBarButtonStyle" />
+
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow61"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.5" >
+
+            <Button
+                android:id="@+id/button61"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:text=""
+                android:layout_weight=".3"
+                style="?android:attr/buttonBarButtonStyle" />
+
+            <Button
+                android:id="@+id/button62"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight=".3"
+                android:text="" />
+
+            <Button
+                android:id="@+id/button63"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight=".3"
+                android:text="" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow62"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.5" >
+
+
+            <Button
+                android:id="@+id/button64"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight=".3"
+                android:text=""
+                style="?android:attr/buttonBarButtonStyle" />
+
+            <Button
+                android:id="@+id/button65"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight=".3"
+                android:text=""
+                style="?android:attr/buttonBarButtonStyle" />
+
+            <Button
+                android:id="@+id/button66"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight=".3"
+                android:text=""
+                style="?android:attr/buttonBarButtonStyle" />
+        </TableRow>
+
+
+
+    </TableLayout>
 
     <Button
         android:id="@+id/startButton"
@@ -131,6 +246,7 @@
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:text="Main Menu"
+                android:textSize="30dp"
                 android:layout_weight="1"
                 style="?android:attr/buttonBarButtonStyle" />
 
@@ -138,6 +254,7 @@
                 android:id="@+id/temp"
                 style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="0dp"
+                android:textSize="30dp"
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:text="Stop Sound" />
@@ -145,6 +262,7 @@
             <Button
                 android:id="@+id/temp2"
                 android:layout_width="0dp"
+                android:textSize="30dp"
                 android:layout_height="fill_parent"
                 android:text="hold2"
                 android:layout_weight="1"
@@ -155,6 +273,7 @@
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:text="Undo"
+                android:textSize="30dp"
                 android:layout_weight="1"
                 style="?android:attr/buttonBarButtonStyle" />
 

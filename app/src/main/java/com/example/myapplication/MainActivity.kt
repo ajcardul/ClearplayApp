@@ -111,7 +111,6 @@ class MainActivity : ComponentActivity() {
         temp.visibility = View.INVISIBLE
         temp2.visibility = View.INVISIBLE
 
-
         puzzleBase.visibility = View.INVISIBLE
         cover1.visibility = View.INVISIBLE
         cover2.visibility = View.INVISIBLE
@@ -147,6 +146,10 @@ class MainActivity : ComponentActivity() {
             cover3.visibility = View.VISIBLE
             cover4.visibility = View.VISIBLE
 
+            findViewById<Button>(R.id.reset).setBackgroundColor(Color.LTGRAY)
+            findViewById<Button>(R.id.mainMenu).setBackgroundColor(Color.LTGRAY)
+            findViewById<Button>(R.id.temp).setBackgroundColor(Color.LTGRAY)
+            findViewById<Button>(R.id.temp2).setBackgroundColor(Color.LTGRAY)
             findViewById<RelativeLayout>(R.id.container).setBackgroundColor(0xFFFFFFFF.toInt())
 
         }
@@ -245,14 +248,6 @@ class MainActivity : ComponentActivity() {
                 removePiece(poppedPiece);
             }
 
-
-            /* ORIGINAL RESET CODE
-            topButton.setBackgroundColor(Color.TRANSPARENT)
-            botButton.setBackgroundColor(Color.TRANSPARENT)
-            for(i in 0 until 2) {
-                PieceTracker[i] = false
-            }
-            */
         }
         importButton.setOnClickListener {
             readInfo()

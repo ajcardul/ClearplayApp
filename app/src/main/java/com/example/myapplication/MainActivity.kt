@@ -59,6 +59,11 @@ class MainActivity : ComponentActivity() {
         val cover3 = findViewById<ImageView>(R.id.cover_12_3)
         val cover4 = findViewById<ImageView>(R.id.cover_12_4)
 
+        val resetButton6 = findViewById<Button>(R.id.reset6)
+        val temp6 = findViewById<Button>(R.id.temp6)
+        val temp62 = findViewById<Button>(R.id.temp62)
+        val mainMenuButton6 = findViewById<Button>(R.id.mainMenu6)
+
         window.decorView.apply {
             systemUiVisibility = (View.SYSTEM_UI_FLAG_IMMERSIVE
                     or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
@@ -110,6 +115,11 @@ class MainActivity : ComponentActivity() {
         mainMenuButton.visibility = View.INVISIBLE
         temp.visibility = View.INVISIBLE
         temp2.visibility = View.INVISIBLE
+
+        resetButton6.visibility = View.INVISIBLE
+        mainMenuButton6.visibility = View.INVISIBLE
+        temp6.visibility = View.INVISIBLE
+        temp62.visibility = View.INVISIBLE
 
         puzzleBase.visibility = View.INVISIBLE
         cover1.visibility = View.INVISIBLE

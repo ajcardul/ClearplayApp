@@ -1,18 +1,19 @@
 package com.example.myapplication
 
+import android.content.res.AssetFileDescriptor
+import android.content.res.Configuration
 import android.graphics.Color
+import android.graphics.drawable.Drawable
 import android.media.MediaPlayer
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import androidx.activity.ComponentActivity
 import java.util.Stack
-import android.content.res.AssetFileDescriptor
-import java.io.File
-import android.net.Uri
-import android.graphics.drawable.Drawable
+
 
 class MainActivity : ComponentActivity() {
     private var squareView: View? = null
@@ -31,7 +32,19 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val configuration: Configuration = resources.configuration
+        configuration.fontScale = 1f
+        val metrics = DisplayMetrics()
+        windowManager.defaultDisplay.getMetrics(metrics)
+        metrics.scaledDensity = configuration.fontScale * metrics.density
+        configuration.densityDpi = resources.displayMetrics.xdpi.toInt()
+        baseContext.resources.updateConfiguration(configuration, metrics)
+
         setContentView(R.layout.activity_main)
+
+
+
         val startButton = findViewById<Button>(R.id.startButton)
         val optionsButton = findViewById<Button>(R.id.optionsButton)
         val button1 = findViewById<Button>(R.id.button1)
@@ -58,6 +71,14 @@ class MainActivity : ComponentActivity() {
         val cover2 = findViewById<ImageView>(R.id.cover_12_2)
         val cover3 = findViewById<ImageView>(R.id.cover_12_3)
         val cover4 = findViewById<ImageView>(R.id.cover_12_4)
+        val cover5 = findViewById<ImageView>(R.id.cover_12_5)
+        val cover6 = findViewById<ImageView>(R.id.cover_12_6)
+        val cover7 = findViewById<ImageView>(R.id.cover_12_7)
+        val cover8 = findViewById<ImageView>(R.id.cover_12_8)
+        val cover9 = findViewById<ImageView>(R.id.cover_12_9)
+        val cover10 = findViewById<ImageView>(R.id.cover_12_10)
+        val cover11 = findViewById<ImageView>(R.id.cover_12_11)
+        val cover12 = findViewById<ImageView>(R.id.cover_12_12)
 
         val resetButton6 = findViewById<Button>(R.id.reset6)
         val temp6 = findViewById<Button>(R.id.temp6)
@@ -126,6 +147,14 @@ class MainActivity : ComponentActivity() {
         cover2.visibility = View.INVISIBLE
         cover3.visibility = View.INVISIBLE
         cover4.visibility = View.INVISIBLE
+        cover5.visibility = View.INVISIBLE
+        cover6.visibility = View.INVISIBLE
+        cover7.visibility = View.INVISIBLE
+        cover8.visibility = View.INVISIBLE
+        cover9.visibility = View.INVISIBLE
+        cover10.visibility = View.INVISIBLE
+        cover11.visibility = View.INVISIBLE
+        cover12.visibility = View.INVISIBLE
 
         startButton.setOnClickListener {
             startButton.visibility = View.INVISIBLE
@@ -155,6 +184,14 @@ class MainActivity : ComponentActivity() {
             cover2.visibility = View.VISIBLE
             cover3.visibility = View.VISIBLE
             cover4.visibility = View.VISIBLE
+            cover5.visibility = View.VISIBLE
+            cover6.visibility = View.VISIBLE
+            cover7.visibility = View.VISIBLE
+            cover8.visibility = View.VISIBLE
+            cover9.visibility = View.VISIBLE
+            cover10.visibility = View.VISIBLE
+            cover11.visibility = View.VISIBLE
+            cover12.visibility = View.VISIBLE
 
             findViewById<Button>(R.id.reset).setBackgroundColor(Color.LTGRAY)
             findViewById<Button>(R.id.mainMenu).setBackgroundColor(Color.LTGRAY)
@@ -190,6 +227,14 @@ class MainActivity : ComponentActivity() {
             cover2.visibility = View.INVISIBLE
             cover3.visibility = View.INVISIBLE
             cover4.visibility = View.INVISIBLE
+            cover5.visibility = View.INVISIBLE
+            cover6.visibility = View.INVISIBLE
+            cover7.visibility = View.INVISIBLE
+            cover8.visibility = View.INVISIBLE
+            cover9.visibility = View.INVISIBLE
+            cover10.visibility = View.INVISIBLE
+            cover11.visibility = View.INVISIBLE
+            cover12.visibility = View.INVISIBLE
 
             findViewById<RelativeLayout>(R.id.container).setBackgroundColor(0xFF085747.toInt())
 
@@ -322,14 +367,38 @@ class MainActivity : ComponentActivity() {
                 //findViewById<Button>(R.id.button4).setBackgroundColor(color)
                 findViewById<ImageView>(R.id.cover_12_4).visibility = View.INVISIBLE
             }
-            4 -> findViewById<Button>(R.id.button5).setBackgroundColor(color)
-            5 -> findViewById<Button>(R.id.button6).setBackgroundColor(color)
-            6 -> findViewById<Button>(R.id.button7).setBackgroundColor(color)
-            7 -> findViewById<Button>(R.id.button8).setBackgroundColor(color)
-            8 -> findViewById<Button>(R.id.button9).setBackgroundColor(color)
-            9 -> findViewById<Button>(R.id.button10).setBackgroundColor(color)
-            10 -> findViewById<Button>(R.id.button11).setBackgroundColor(color)
-            11 -> findViewById<Button>(R.id.button12).setBackgroundColor(color)
+            4 -> {
+                //findViewById<Button>(R.id.button5).setBackgroundColor(color)
+                findViewById<ImageView>(R.id.cover_12_5).visibility = View.INVISIBLE
+            }
+            5 -> {
+                //findViewById<Button>(R.id.button6).setBackgroundColor(color)
+                findViewById<ImageView>(R.id.cover_12_6).visibility = View.INVISIBLE
+            }
+            6 -> {
+                //findViewById<Button>(R.id.button7).setBackgroundColor(color)
+                findViewById<ImageView>(R.id.cover_12_7).visibility = View.INVISIBLE
+            }
+            7 -> {
+                //findViewById<Button>(R.id.button8).setBackgroundColor(color)
+                findViewById<ImageView>(R.id.cover_12_8).visibility = View.INVISIBLE
+            }
+            8 -> {
+                //findViewById<Button>(R.id.button9).setBackgroundColor(color)
+                findViewById<ImageView>(R.id.cover_12_9).visibility = View.INVISIBLE
+            }
+            9 -> {
+                //findViewById<Button>(R.id.button10).setBackgroundColor(color)
+                findViewById<ImageView>(R.id.cover_12_10).visibility = View.INVISIBLE
+            }
+            10 -> {
+                //findViewById<Button>(R.id.button11).setBackgroundColor(color)
+                findViewById<ImageView>(R.id.cover_12_11).visibility = View.INVISIBLE
+            }
+            11 -> {
+                //findViewById<Button>(R.id.button12).setBackgroundColor(color)
+                findViewById<ImageView>(R.id.cover_12_12).visibility = View.INVISIBLE
+            }
         }
         stack.push(x)
         return true
@@ -354,14 +423,38 @@ class MainActivity : ComponentActivity() {
                 findViewById<Button>(R.id.button4).setBackgroundColor(Color.TRANSPARENT)
                 findViewById<ImageView>(R.id.cover_12_4).visibility = View.VISIBLE
             }
-            4 -> findViewById<Button>(R.id.button5).setBackgroundColor(Color.TRANSPARENT)
-            5 -> findViewById<Button>(R.id.button6).setBackgroundColor(Color.TRANSPARENT)
-            6 -> findViewById<Button>(R.id.button7).setBackgroundColor(Color.TRANSPARENT)
-            7 -> findViewById<Button>(R.id.button8).setBackgroundColor(Color.TRANSPARENT)
-            8 -> findViewById<Button>(R.id.button9).setBackgroundColor(Color.TRANSPARENT)
-            9 -> findViewById<Button>(R.id.button10).setBackgroundColor(Color.TRANSPARENT)
-            10 -> findViewById<Button>(R.id.button11).setBackgroundColor(Color.TRANSPARENT)
-            11 -> findViewById<Button>(R.id.button12).setBackgroundColor(Color.TRANSPARENT)
+            4 -> {
+                findViewById<Button>(R.id.button5).setBackgroundColor(Color.TRANSPARENT)
+                findViewById<ImageView>(R.id.cover_12_5).visibility = View.VISIBLE
+            }
+            5 -> {
+                findViewById<Button>(R.id.button6).setBackgroundColor(Color.TRANSPARENT)
+                findViewById<ImageView>(R.id.cover_12_6).visibility = View.VISIBLE
+            }
+            6 -> {
+                findViewById<Button>(R.id.button7).setBackgroundColor(Color.TRANSPARENT)
+                findViewById<ImageView>(R.id.cover_12_7).visibility = View.VISIBLE
+            }
+            7 -> {
+                findViewById<Button>(R.id.button8).setBackgroundColor(Color.TRANSPARENT)
+                findViewById<ImageView>(R.id.cover_12_8).visibility = View.VISIBLE
+            }
+            8 -> {
+                findViewById<Button>(R.id.button9).setBackgroundColor(Color.TRANSPARENT)
+                findViewById<ImageView>(R.id.cover_12_9).visibility = View.VISIBLE
+            }
+            9 -> {
+                findViewById<Button>(R.id.button10).setBackgroundColor(Color.TRANSPARENT)
+                findViewById<ImageView>(R.id.cover_12_10).visibility = View.VISIBLE
+            }
+            10 -> {
+                findViewById<Button>(R.id.button11).setBackgroundColor(Color.TRANSPARENT)
+                findViewById<ImageView>(R.id.cover_12_11).visibility = View.VISIBLE
+            }
+            11 -> {
+                findViewById<Button>(R.id.button12).setBackgroundColor(Color.TRANSPARENT)
+                findViewById<ImageView>(R.id.cover_12_12).visibility = View.VISIBLE
+            }
         }
 
         return true

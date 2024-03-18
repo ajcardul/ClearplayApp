@@ -129,7 +129,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="75sp"
         android:text="Start Puzzle" />
 
     <Button
@@ -138,77 +138,171 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="275dp"
+        android:layout_marginTop="275sp"
         android:text="Options" />
 
 
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="450dp"
-        android:layout_height="180dp"
+        android:layout_width="450sp"
+        android:layout_height="180sp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="800dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="800sp"
+        android:layout_marginTop="10sp"
         android:src="@drawable/pic" />
 
     <ImageView
         android:id="@+id/puzzleBase"
-        android:layout_width="1280dp"
-        android:layout_height="665dp"
+        android:layout_width="1280sp"
+        android:layout_height="665sp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="335dp"
-        android:layout_marginEnd="0dp" />
+        android:layout_marginTop="335sp"
+        android:layout_marginEnd="0sp" />
 
     <ImageView
         android:id="@+id/cover_12_1"
-        android:layout_width="394dp"
-        android:layout_height="222dp"
+        android:layout_width="394sp"
+        android:layout_height="222sp"
         android:scaleType="fitXY"
         android:adjustViewBounds="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="135dp"
-        android:layout_marginStart="0dp"
+        android:layout_marginTop="135sp"
+        android:layout_marginStart="0sp"
         android:src="@drawable/c12_1" />
 
     <ImageView
         android:id="@+id/cover_12_3"
-        android:layout_width="480dp"
-        android:layout_height="220dp"
+        android:layout_width="480sp"
+        android:layout_height="220sp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="135dp"
-        android:layout_marginStart="560dp"
+        android:layout_marginTop="135sp"
+        android:layout_marginStart="560sp"
         android:scaleType="fitXY"
         android:adjustViewBounds="true"
         android:src="@drawable/c12_3" />
     <ImageView
         android:id="@+id/cover_12_4"
-        android:layout_width="330dp"
-        android:layout_height="270dp"
+        android:layout_width="330sp"
+        android:layout_height="270sp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="135dp"
-        android:layout_marginStart="955dp"
+        android:layout_marginTop="135sp"
+        android:layout_marginStart="955sp"
         android:scaleType="fitXY"
         android:adjustViewBounds="true"
         android:src="@drawable/c12_4" />
 
     <ImageView
         android:id="@+id/cover_12_2"
-        android:layout_width="320dp"
-        android:layout_height="275dp"
+        android:layout_width="320sp"
+        android:layout_height="275sp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="135dp"
-        android:layout_marginStart="320dp"
+        android:layout_marginTop="135sp"
+        android:layout_marginStart="320sp"
         android:scaleType="fitXY"
         android:adjustViewBounds="true"
         android:src="@drawable/c12_2" />
+
+    <ImageView
+        android:id="@+id/cover_12_5"
+        android:layout_width="321sp"
+        android:layout_height="325sp"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="303sp"
+        android:layout_marginStart="0sp"
+        android:src="@drawable/c12_5" />
+
+    <ImageView
+        android:id="@+id/cover_12_7"
+        android:layout_width="321sp"
+        android:layout_height="336sp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="294sp"
+        android:layout_marginStart="639sp"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:src="@drawable/c12_7" />
+    <ImageView
+        android:id="@+id/cover_12_8"
+        android:layout_width="403sp"
+        android:layout_height="232sp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="350sp"
+        android:layout_marginStart="877sp"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:src="@drawable/c12_8" />
+
+    <ImageView
+        android:id="@+id/cover_12_6"
+        android:layout_width="482sp"
+        android:layout_height="232sp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="349sp"
+        android:layout_marginStart="237sp"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:src="@drawable/c12_6" />
+
+    <ImageView
+        android:id="@+id/cover_12_9"
+        android:layout_width="406sp"
+        android:layout_height="230sp"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="576sp"
+        android:layout_marginStart="0sp"
+        android:src="@drawable/c12_9" />
+
+    <ImageView
+        android:id="@+id/cover_12_11"
+        android:layout_width="470sp"
+        android:layout_height="235sp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="577sp"
+        android:layout_marginStart="570sp"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:src="@drawable/c12_11" />
+    <ImageView
+        android:id="@+id/cover_12_12"
+        android:layout_width="403sp"
+        android:layout_height="280sp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="524sp"
+        android:layout_marginStart="956sp"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:src="@drawable/c12_12" />
+
+    <ImageView
+        android:id="@+id/cover_12_10"
+        android:layout_width="323sp"
+        android:layout_height="277sp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="528sp"
+        android:layout_marginStart="320sp"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:src="@drawable/c12_10" />
 
     <Button
         android:id="@+id/slideShowButton"
@@ -216,7 +310,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="475dp"
+        android:layout_marginTop="475sp"
         android:text="Slide Show" />
 
     <Button
@@ -225,7 +319,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="675dp"
+        android:layout_marginTop="675sp"
         android:text="Import" />
 
     <TableLayout
@@ -243,26 +337,26 @@
 
             <Button
                 android:id="@+id/mainMenu"
-                android:layout_width="0dp"
+                android:layout_width="0sp"
                 android:layout_height="fill_parent"
                 android:text="Main Menu"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:layout_weight="1"
                 style="?android:attr/buttonBarButtonStyle" />
 
             <Button
                 android:id="@+id/temp"
                 style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="0dp"
-                android:textSize="30dp"
+                android:layout_width="0sp"
+                android:textSize="30sp"
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:text="Stop Sound" />
 
             <Button
                 android:id="@+id/temp2"
-                android:layout_width="0dp"
-                android:textSize="30dp"
+                android:layout_width="0sp"
+                android:textSize="30sp"
                 android:layout_height="fill_parent"
                 android:text="hold2"
                 android:layout_weight="1"
@@ -270,10 +364,10 @@
 
             <Button
                 android:id="@+id/reset"
-                android:layout_width="0dp"
+                android:layout_width="0sp"
                 android:layout_height="fill_parent"
                 android:text="Undo"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:layout_weight="1"
                 style="?android:attr/buttonBarButtonStyle" />
 
@@ -282,13 +376,13 @@
 
         <TableRow
             android:id="@+id/tableRow1"
-            android:layout_width="0dp"
+            android:layout_width="0sp"
             android:layout_height="fill_parent"
             android:layout_weight="1" >
 
             <Button
                 android:id="@+id/button1"
-                android:layout_width="0dp"
+                android:layout_width="0sp"
                 android:layout_height="fill_parent"
                 android:text=""
                 style="?android:attr/buttonBarButtonStyle" />
@@ -296,20 +390,20 @@
             <Button
                 android:id="@+id/button2"
                 style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="0dp"
+                android:layout_width="0sp"
                 android:layout_height="fill_parent"
                 android:text="" />
 
             <Button
                 android:id="@+id/button3"
                 style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="0dp"
+                android:layout_width="0sp"
                 android:layout_height="fill_parent"
                 android:text="" />
 
             <Button
                 android:id="@+id/button4"
-                android:layout_width="0dp"
+                android:layout_width="0sp"
                 android:layout_height="fill_parent"
                 android:text=""
                 style="?android:attr/buttonBarButtonStyle" />
@@ -323,7 +417,7 @@
 
             <Button
                 android:id="@+id/button5"
-                android:layout_width="0dp"
+                android:layout_width="0sp"
                 android:layout_height="fill_parent"
                 android:layout_weight=".3"
                 android:text=""
@@ -331,7 +425,7 @@
 
             <Button
                 android:id="@+id/button6"
-                android:layout_width="0dp"
+                android:layout_width="0sp"
                 android:layout_height="fill_parent"
                 android:layout_weight=".3"
                 android:text=""
@@ -339,7 +433,7 @@
 
             <Button
                 android:id="@+id/button7"
-                android:layout_width="0dp"
+                android:layout_width="0sp"
                 android:layout_height="fill_parent"
                 android:layout_weight=".3"
                 android:text=""
@@ -347,7 +441,7 @@
 
             <Button
                 android:id="@+id/button8"
-                android:layout_width="0dp"
+                android:layout_width="0sp"
                 android:layout_height="fill_parent"
                 android:layout_weight=".3"
                 android:text=""
@@ -363,14 +457,14 @@
 
             <Button
                 android:id="@+id/button9"
-                android:layout_width="0dp"
+                android:layout_width="0sp"
                 android:layout_height="fill_parent"
                 android:layout_weight="0"
                 android:text=""
                 style="?android:attr/buttonBarButtonStyle" />
             <Button
                 android:id="@+id/button10"
-                android:layout_width="0dp"
+                android:layout_width="0sp"
                 android:layout_height="fill_parent"
                 android:layout_weight="0"
                 android:text=""
@@ -378,14 +472,14 @@
 
             <Button
                 android:id="@+id/button11"
-                android:layout_width="0dp"
+                android:layout_width="0sp"
                 android:layout_height="fill_parent"
                 android:layout_weight="0"
                 android:text=""
                 style="?android:attr/buttonBarButtonStyle" />
             <Button
                 android:id="@+id/button12"
-                android:layout_width="0dp"
+                android:layout_width="0sp"
                 android:layout_height="fill_parent"
                 android:layout_weight="0"
                 android:text=""

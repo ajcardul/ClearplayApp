@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.content.res.AssetFileDescriptor
+import android.content.res.AssetManager
 import android.content.res.Configuration
 import android.graphics.Color
 import android.graphics.drawable.Drawable
@@ -12,6 +13,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import androidx.activity.ComponentActivity
+import java.io.IOException
 import java.util.Stack
 
 
@@ -24,15 +26,16 @@ class MainActivity : ComponentActivity() {
     private var mediaPlayer: MediaPlayer? = null
     private var isAudioFile1: Boolean = true
 
+    var numPuzzles : Int = 0
     var pNum: Int = 0
     var numPieces: Int = 0
     var numSPs: Int = 0
+
 
     //val puzzleBase = findViewById<ImageView>(R.id.puzzleBase)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         val configuration: Configuration = resources.configuration
         configuration.fontScale = 1f
         val metrics = DisplayMetrics()
@@ -42,6 +45,12 @@ class MainActivity : ComponentActivity() {
         baseContext.resources.updateConfiguration(configuration, metrics)
 
         setContentView(R.layout.activity_main)
+
+        try {
+            numPuzzles = getAssetFolders(applicationContext.assets, "")
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
 
 
 
@@ -84,6 +93,7 @@ class MainActivity : ComponentActivity() {
         val temp6 = findViewById<Button>(R.id.temp6)
         val temp62 = findViewById<Button>(R.id.temp62)
         val mainMenuButton6 = findViewById<Button>(R.id.mainMenu6)
+
 
         window.decorView.apply {
             systemUiVisibility = (View.SYSTEM_UI_FLAG_IMMERSIVE
@@ -514,4 +524,21 @@ class MainActivity : ComponentActivity() {
         // Release the MediaPlayer when the activity is destroyed
         mediaPlayer?.release()
     }
+}
+
+//@Throws(IOException::class)
+private fun getAssetFolders(assetManager: AssetManager, path: String): Int {
+    val folders = mutableListOf<String>()
+    val list = assetManager.list(path)
+    var count = 0
+
+
+
+    if (list?.size != null) {
+        return list.size/2
+    }
+    else {
+        return 0
+    }
+
 }
